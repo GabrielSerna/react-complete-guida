@@ -1,6 +1,6 @@
 import Expenses from './components/components/Expenses.js';
 
-function App() {
+const App = () => {
 
   const expenses = [
     {

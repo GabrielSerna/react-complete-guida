@@ -3,7 +3,6 @@ import ExpenseItem from '../components/ExpenseItem';
 import '../components/Expenses.css';
 
 const Expenses = (props) => {
-
   return (
     <Card className='expenses'>
 
