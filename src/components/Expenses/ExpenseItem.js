@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import Card from '../UI/Card.js'
-import ExpenseDate from '../components/ExpenseDate.js';
+import ExpenseDate from './ExpenseDate.js';
 import './ExpenseItem.css';
 
 const ExpenseItem = (props) => {

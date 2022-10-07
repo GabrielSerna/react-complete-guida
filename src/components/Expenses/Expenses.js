@@ -1,11 +1,10 @@
 import Card from '../UI/Card.js';
-import ExpenseItem from '../components/ExpenseItem';
-import '../components/Expenses.css';
+import ExpenseItem from './ExpenseItem.js';
+import './Expenses.css';
 
 const Expenses = (props) => {
   return (
     <Card className='expenses'>
-
       { props.data.map( (el, idx) => (
           <ExpenseItem
             key={idx}
