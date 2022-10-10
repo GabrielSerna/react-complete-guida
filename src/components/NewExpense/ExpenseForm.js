@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './ExpenseForm.css';
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
 
   const [ title, setTitle ] = useState('');
   const [ amount, setAmount ] = useState(0)
@@ -14,9 +14,7 @@ const ExpenseForm = () => {
 
   const titleChangeHandler = (e) => {
     setTitle(e.target.value);
-
     // setNewExpense({ ...newExpense, title: e.target.value });
-
     // setNewExpense( prevState => {
     //   return { ...prevState, title: e.target.value }
     // });
@@ -24,16 +22,15 @@ const ExpenseForm = () => {
 
   const amountChangeHandler = (e) => {
     setAmount(e.target.value);
-
     // setNewExpense({ ...newExpense, amount: e.target.value });
   };
 
   const dateChangeHandler = (e) => {
     setDate(e.target.value);
-
     // setNewExpense({ ...newExpense, date: e.target.value });
   };
 
+  // form submit
   const submitHandler = (e) => {
     e.preventDefault();
 
@@ -42,6 +39,9 @@ const ExpenseForm = () => {
       amount,
       date
     };
+
+  // pass data from child to parent
+  props.onSaveExpenseData(newExpense);
 
   };
 
