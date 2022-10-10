@@ -3,20 +3,22 @@ import './ExpenseForm.css';
 
 const ExpenseForm = () => {
 
-  const [ title, setTitle ] = useState('');
-  const [ amount, setAmount ] = useState(0);
-  const [ date, setDate ] = useState(new Date());
+  const [ newExpense, setNewExpense ] = useState({
+    title: '',
+    amount: 0,
+    date: new Date().toISOString().split('T')[0]
+  });
 
   const titleChangeHandler = (e) => {
-    setTitle(e.target.value);
+    setNewExpense({ ...newExpense, title: e.target.value });
   };
 
   const amountChangeHandler = (e) => {
-    setTitle(e.target.value);
+    setNewExpense({ ...newExpense, amount: e.target.value });
   };
 
   const dateChangeHandler = (e) => {
-    setTitle(e.target.value);
+    setNewExpense({ ...newExpense, date: e.target.value });
   };
 
   return (
@@ -28,11 +30,11 @@ const ExpenseForm = () => {
         </div>
         <div className="new-expense__control">
           <label>Amount</label>
-          <input type="number" min="0.01" step="0.01" value={amount} onChange={amountChangeHandler} />
+          <input type="number" min="0.01" step="0.01" value={newExpense.amount} onChange={amountChangeHandler} />
         </div>
         <div className="new-expense__control">
           <label>Date</label>
-          <input type="date" min="2022-01-01" max="2022-12-31" value={date} onChange={dateChangeHandler}/>
+          <input type="date" min="2022-01-01" max="2022-12-31" value={newExpense.date} onChange={dateChangeHandler}/>
         </div>
         <div className="new-expense__actions">
           <button type="submit" >Add expense</button>
