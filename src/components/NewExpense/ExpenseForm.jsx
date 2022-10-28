@@ -5,7 +5,8 @@ const ExpenseForm = (props) => {
 
   const [ title, setTitle ] = useState('');
   const [ amount, setAmount ] = useState(0)
-  const [ date, setDate ] = useState(new Date().toISOString().split('T')[0]);
+  const [ date, setDate ] = useState('');
+  // const [ date, setDate ] = useState(new Date().toISOString().split('T')[0]);
   // const [ newExpense, setNewExpense ] = useState({
   //   title: '',
   //   amount: 0,
@@ -68,7 +69,7 @@ const ExpenseForm = (props) => {
           <label>Date</label>
           <input
             type="date"
-            min="2022-01-01"
+            min="2019-01-01"
             max="2022-12-31"
             value={date}
             onChange={dateChangeHandler}/>
